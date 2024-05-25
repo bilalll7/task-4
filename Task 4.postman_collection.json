@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "f065ed63-1f87-4502-866b-452eddd68741",
+		"name": "Task 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34261155"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userType\": \"1\",\r\n    \"firstName\": \"User\",\r\n    \"lastName\": \"1\",\r\n    \"email\": \"usertest@gmail.com\",\r\n    \"password\": \"1234567\",\r\n    \"confirmPassword\": \"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/api/v1/auth/signup/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"usertest@gmail.com\",\r\n    \"password\": \"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/api/v1/auth/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Insert",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTcxNjY1MTgzOCwiZXhwIjoxNzI0NDI3ODM4fQ.K4i_b4cgAfBupiONHf7YpV12PeN-uz0g8wo1qOigoCE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Data Ke 1 Test\",\r\n    \"productImage\": [\"https://dummyimage.com/600x400/000/fff\", \"https://dummyimage.com/600x400/000/fff\"],\r\n    \"isFeatured\": 1,\r\n    \"price\": 23.0,\r\n    \"shortDescription\": \"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque soluta dicta quis corporis? Quae velit porro cum modi aliquam libero.\",\r\n    \"description\": \"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt vel saepe laboriosam accusantium magnam ex, voluptates eius unde voluptatibus porro numquam minima deleniti qui temporibus ullam distinctio fugiat soluta molestias corporis. Ipsam similique dolorem minus suscipit voluptates architecto, eum quod aliquam at veniam saepe consectetur commodi, voluptatum autem cumque voluptatibus.\",\r\n    \"productUrl\": \"https://www.w3.org/WAI/ER/test/xhtml/testfiles/resource/pdf/dummy.pdf\",\r\n    \"category\": [\"Node Js\", \"frontend\"],\r\n    \"tags\": [\"Leave Managment\", \"backend project\"]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/api/v1/projects/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ALL Project",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project By Id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzE2NDQxNzE3LCJleHAiOjE3MjQyMTc3MTd9._d8IrNqBeoWxw5tuXjawnySr5qOFtQBSWGO1D1AhIZM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Data ke 1 Update test\",\r\n    \"productImage\": [\"https://dummyimage.com/600x400/000/fff\", \"https://dummyimage.com/600x400/000/fff\"],\r\n    \"isFeatured\": 1,\r\n    \"price\": 24.0,\r\n    \"shortDescription\": \"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque soluta dicta quis corporis? Quae velit porro cum modi aliquam libero.\",\r\n    \"description\": \"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt vel saepe laboriosam accusantium magnam ex, voluptates eius unde voluptatibus porro numquam minima deleniti qui temporibus ullam distinctio fugiat soluta molestias corporis. Ipsam similique dolorem minus suscipit voluptates architecto, eum quod aliquam at veniam saepe consectetur commodi, voluptatum autem cumque voluptatibus.\",\r\n    \"productUrl\": \"https://www.w3.org/WAI/ER/test/xhtml/testfiles/resource/pdf/dummy.pdf\",\r\n    \"category\": [\"Node Js\", \"frontend\"],\r\n    \"tags\": [\"Leave Managment\", \"backend project\"]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3300/api/v1/projects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/api/v1/projects/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzE2NDQ2NDI3LCJleHAiOjE3MjQyMjI0Mjd9.R6ByVsAlCrfJZNvDUwg_h0dnKE3I_J7jwsbGRnO2fC8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3300/api/v1/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3300",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
