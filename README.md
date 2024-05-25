@@ -8,5 +8,5 @@ Dependencies
 - pg
 - pg-hstore
 
-npm install
-npm run dev
+- npm install
+- npm run dev
